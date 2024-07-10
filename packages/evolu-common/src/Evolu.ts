@@ -15,6 +15,7 @@ import * as Kysely from "kysely";
 import { Config, createRuntime, defaultConfig } from "./Config.js";
 import { TimestampString } from "./Crdt.js";
 import { Mnemonic, NanoIdGenerator } from "./Crypto.js";
+import { createSocket } from "./Socket.js";
 import {
   DbFactory,
   DbSchema,
@@ -45,6 +46,7 @@ import {
 } from "./Sqlite.js";
 import { Listener, Unsubscribe, makeStore } from "./Store.js";
 import { SyncState, initialSyncState } from "./Sync.js";
+import { Nullable } from "kysely";
 
 /**
  * The Evolu interface provides a type-safe SQL query building and state
@@ -666,6 +668,8 @@ const createEvolu = (
           handlePatches(),
         ).pipe(runFork);
       };
+
+    createSocket(sync, config);
 
     db.init(
       schema,

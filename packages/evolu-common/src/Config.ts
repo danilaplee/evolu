@@ -43,6 +43,24 @@ export interface Config {
    * events with values. For production, use `warning`.
    */
   minimumLogLevel: "none" | "trace" | "debug" | "warning";
+
+  /**
+   * Enables websocket connection
+   *
+   * If set to true runs a websocket connection on the sync url
+   */
+  enableWebsocketConnection?: true;
+
+  /**
+   * Allows to reuse websocket connections for multiple database setup
+   *
+   * Works INSTEAD of enableWebsocket and if set overrides enableWebsocket this
+   * attaches the database to a connection produced by a call back from another
+   * database that has enableWebsocketConnection
+   */
+  externalWebsocketConnection?: (
+    cb: (event: MessageEvent<Buffer | String | Object>) => void,
+  ) => void;
 }
 
 export const Config = Context.GenericTag<Config>("Config");
