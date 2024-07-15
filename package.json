@@ -14,19 +14,21 @@
     "release": "pnpm run build && changeset publish",
     "ios": "cd apps/native && pnpm ios",
     "android": "cd apps/native && pnpm android",
+    "eas:android": "cd apps/native && eas build --platform android --profile preview",
     "generate-sql": "bun scripts/generateSql.ts",
     "docs": "typedoc"
   },
+  "workspaces": ["packages/*"],
   "devDependencies": {
     "@changesets/cli": "^2.27.5",
     "eslint": "^8.57.0",
     "eslint-config-evolu": "workspace:*",
     "prettier": "^3.3.2",
     "prettier-plugin-jsdoc": "^1.3.0",
-    "turbo": "^2.0.3",
-    "typedoc": "0.26.0-beta.0"
+    "turbo": "^2.0.4",
+    "typedoc": "^0.26.0"
   },
-  "packageManager": "pnpm@9.3.0",
+  "packageManager": "pnpm@9.5.0",
   "pnpm": {
     "peerDependencyRules": {
       "ignoreMissing": [
@@ -39,7 +41,7 @@
       "flexsearch": "0.7.31"
     },
     "patchedDependencies": {
-      "@changesets/assemble-release-plan@6.0.2": "patches/@changesets__assemble-release-plan@6.0.2.patch"
+      "@changesets/assemble-release-plan@6.0.3": "patches/@changesets__assemble-release-plan@6.0.3.patch"
     }
   }
 }

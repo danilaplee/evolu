@@ -1,6 +1,6 @@
 {
   "name": "@evolu/common",
-  "version": "5.2.1",
+  "version": "5.2.3",
   "description": "Local-first platform designed for privacy, ease of use, and no vendor lock-in to sync and backup people's lifetime data",
   "keywords": [
     "evolu",
@@ -61,8 +61,8 @@
     "nanoid": "^5.0.7"
   },
   "devDependencies": {
-    "@effect/platform": "^0.57.0",
-    "@effect/schema": "^0.67.9",
+    "@effect/platform": "^0.58.0",
+    "@effect/schema": "^0.68.0",
     "@evolu/tsconfig": "workspace:*",
     "@protobuf-ts/plugin": "^2.9.4",
     "@protobuf-ts/protoc": "^2.9.4",
@@ -74,8 +74,8 @@
     "vitest": "^1.6.0"
   },
   "peerDependencies": {
-    "@effect/platform": "^0.57.0",
-    "@effect/schema": "^0.67.0",
+    "@effect/platform": "^0.58.0",
+    "@effect/schema": "^0.68.0",
     "effect": "^3.1.2"
   },
   "publishConfig": {
